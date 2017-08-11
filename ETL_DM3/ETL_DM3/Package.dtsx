@@ -1,0 +1,3029 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/8/2017 1:57:32 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="INF-2065-22"
+  DTS:CreatorName="UNWE\inf2065_usr"
+  DTS:DTSID="{40B2413C-6708-414F-9A50-2DD2D35B12C6}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.2165.0"
+  DTS:LocaleID="1026"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="17"
+  DTS:VersionGUID="{624971EE-56D1-4C30-86AC-947F6943AF9D}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(LocalDb)\MSSQLLocalDb.AdventureWorks2008R2]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D6D5353B-DB0F-4FFC-9A08-80DE56E8D7C2}"
+      DTS:ObjectName="(LocalDb)\MSSQLLocalDb.AdventureWorks2008R2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=(LocalDb)\MSSQLLocalDb;Initial Catalog=AdventureWorks2008R2;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(LocalDb)\MSSQLLocalDb.DB_DataMartIani]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{A9378E5D-EE70-4EF0-A16C-355BA60AF606}"
+      DTS:ObjectName="(LocalDb)\MSSQLLocalDb.DB_DataMartIani">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=(LocalDb)\MSSQLLocalDb;Initial Catalog=DB_DataMartIani;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[INF-2065-22\ALEX1.AdventureWorks2008R2.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{3ED2E044-3BD7-4C78-99B7-02A4F241C614}"
+      DTS:ObjectName="INF-2065-22\ALEX1.AdventureWorks2008R2.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=INF-2065-22\ALEX1;User ID=sa;Initial Catalog=AdventureWorks2008R2;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[INF-2065-22\ALEX1.DB_DataMartIani.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{18921634-7775-419C-81F5-BC4061E518EB}"
+      DTS:ObjectName="INF-2065-22\ALEX1.DB_DataMartIani.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=INF-2065-22\ALEX1;User ID=sa;Initial Catalog=DB_DataMartIani;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT_Customers"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{2041ECA1-E392-42E1-800A-6E0EDBA1E166}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT_Customers"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT_Customers\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Dim_Customer]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Customers\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[(LocalDb)\MSSQLLocalDb.DB_DataMartIani]"
+                  connectionManagerRefId="Package.ConnectionManagers[(LocalDb)\MSSQLLocalDb.DB_DataMartIani]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_Customers\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Customers\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CustomerID]"
+                      cachedDataType="i4"
+                      cachedName="CustomerID"
+                      externalMetadataColumnId="Package\DFT_Customers\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Id_Customer]"
+                      lineageId="Package\DFT_Customers\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerID]" />
+                    <inputColumn
+                      refId="Package\DFT_Customers\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FirstName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="FirstName"
+                      externalMetadataColumnId="Package\DFT_Customers\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FName]"
+                      lineageId="Package\DFT_Customers\OLE DB Source.Outputs[OLE DB Source Output].Columns[FirstName]" />
+                    <inputColumn
+                      refId="Package\DFT_Customers\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LastName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="LastName"
+                      externalMetadataColumnId="Package\DFT_Customers\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LName]"
+                      lineageId="Package\DFT_Customers\OLE DB Source.Outputs[OLE DB Source Output].Columns[LastName]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_Customers\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Id_Customer]"
+                      dataType="i4"
+                      name="Id_Customer" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Customers\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FName]"
+                      dataType="wstr"
+                      length="50"
+                      name="FName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Customers\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LName]"
+                      dataType="wstr"
+                      length="50"
+                      name="LName" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Customers\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT_Customers\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Customers\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Customers\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Customers\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Customers\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Customers\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT        Sales.Customer.CustomerID, Person.Person.FirstName, Person.Person.LastName
+FROM            Sales.Customer INNER JOIN
+                         Person.Person ON Sales.Customer.PersonID = Person.Person.BusinessEntityID</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Customers\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[(LocalDb)\MSSQLLocalDb.AdventureWorks2008R2]"
+                  connectionManagerRefId="Package.ConnectionManagers[(LocalDb)\MSSQLLocalDb.AdventureWorks2008R2]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT_Customers\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Customers\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Customers\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CustomerID]"
+                      lineageId="Package\DFT_Customers\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerID]"
+                      name="CustomerID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Customers\OLE DB Source.Outputs[OLE DB Source Output].Columns[FirstName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Customers\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
+                      length="50"
+                      lineageId="Package\DFT_Customers\OLE DB Source.Outputs[OLE DB Source Output].Columns[FirstName]"
+                      name="FirstName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Customers\OLE DB Source.Outputs[OLE DB Source Output].Columns[LastName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Customers\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
+                      length="50"
+                      lineageId="Package\DFT_Customers\OLE DB Source.Outputs[OLE DB Source Output].Columns[LastName]"
+                      name="LastName"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_Customers\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CustomerID]"
+                      dataType="i4"
+                      name="CustomerID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Customers\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
+                      dataType="wstr"
+                      length="50"
+                      name="FirstName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Customers\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      name="LastName" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT_Customers\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Customers\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CustomerID]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Customers\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CustomerID]"
+                      name="CustomerID" />
+                    <outputColumn
+                      refId="Package\DFT_Customers\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FirstName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DFT_Customers\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FirstName]"
+                      name="FirstName" />
+                    <outputColumn
+                      refId="Package\DFT_Customers\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DFT_Customers\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LastName]"
+                      name="LastName" />
+                    <outputColumn
+                      refId="Package\DFT_Customers\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Customers\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Customers\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Customers\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT_Customers.Paths[OLE DB Source Output]"
+              endId="Package\DFT_Customers\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\DFT_Customers\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DFT_Dim_CountryRegion"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{5FD3306C-C665-4D82-A7CA-24561AE816DD}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT_Dim_CountryRegion"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT_Dim_CountryRegion\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Dim_CountryRegion]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Dim_CountryRegion\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[(LocalDb)\MSSQLLocalDb.DB_DataMartIani]"
+                  connectionManagerRefId="Package.ConnectionManagers[(LocalDb)\MSSQLLocalDb.DB_DataMartIani]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_Dim_CountryRegion\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Dim_CountryRegion\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CountryRegionCode]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="CountryRegionCode"
+                      externalMetadataColumnId="Package\DFT_Dim_CountryRegion\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Id_Region]"
+                      lineageId="Package\DFT_Dim_CountryRegion\OLE DB Source.Outputs[OLE DB Source Output].Columns[CountryRegionCode]" />
+                    <inputColumn
+                      refId="Package\DFT_Dim_CountryRegion\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Name"
+                      externalMetadataColumnId="Package\DFT_Dim_CountryRegion\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Name_Region]"
+                      lineageId="Package\DFT_Dim_CountryRegion\OLE DB Source.Outputs[OLE DB Source Output].Columns[Name]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_CountryRegion\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Id_Region]"
+                      dataType="wstr"
+                      length="3"
+                      name="Id_Region" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_CountryRegion\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Name_Region]"
+                      dataType="wstr"
+                      length="50"
+                      name="Name_Region" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Dim_CountryRegion\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT_Dim_CountryRegion\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Dim_CountryRegion\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Dim_CountryRegion\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_CountryRegion\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Dim_CountryRegion\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Dim_CountryRegion\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Person].[CountryRegion]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT        CountryRegionCode, Name
+FROM            Person.CountryRegion</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Dim_CountryRegion\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[(LocalDb)\MSSQLLocalDb.AdventureWorks2008R2]"
+                  connectionManagerRefId="Package.ConnectionManagers[(LocalDb)\MSSQLLocalDb.AdventureWorks2008R2]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT_Dim_CountryRegion\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Dim_CountryRegion\OLE DB Source.Outputs[OLE DB Source Output].Columns[CountryRegionCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Dim_CountryRegion\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CountryRegionCode]"
+                      length="3"
+                      lineageId="Package\DFT_Dim_CountryRegion\OLE DB Source.Outputs[OLE DB Source Output].Columns[CountryRegionCode]"
+                      name="CountryRegionCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_CountryRegion\OLE DB Source.Outputs[OLE DB Source Output].Columns[Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Dim_CountryRegion\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Name]"
+                      length="50"
+                      lineageId="Package\DFT_Dim_CountryRegion\OLE DB Source.Outputs[OLE DB Source Output].Columns[Name]"
+                      name="Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_CountryRegion\OLE DB Source.Outputs[OLE DB Source Output].Columns[ModifiedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Dim_CountryRegion\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ModifiedDate]"
+                      lineageId="Package\DFT_Dim_CountryRegion\OLE DB Source.Outputs[OLE DB Source Output].Columns[ModifiedDate]"
+                      name="ModifiedDate"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_CountryRegion\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CountryRegionCode]"
+                      dataType="wstr"
+                      length="3"
+                      name="CountryRegionCode" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_CountryRegion\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Name]"
+                      dataType="wstr"
+                      length="50"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Dim_CountryRegion\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ModifiedDate]"
+                      dataType="dbTimeStamp"
+                      name="ModifiedDate" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT_Dim_CountryRegion\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Dim_CountryRegion\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CountryRegionCode]"
+                      dataType="wstr"
+                      length="3"
+                      lineageId="Package\DFT_Dim_CountryRegion\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CountryRegionCode]"
+                      name="CountryRegionCode" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_CountryRegion\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Name]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DFT_Dim_CountryRegion\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Name]"
+                      name="Name" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_CountryRegion\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ModifiedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DFT_Dim_CountryRegion\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ModifiedDate]"
+                      name="ModifiedDate" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_CountryRegion\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Dim_CountryRegion\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Dim_CountryRegion\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Dim_CountryRegion\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT_Dim_CountryRegion.Paths[OLE DB Source Output]"
+              endId="Package\DFT_Dim_CountryRegion\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\DFT_Dim_CountryRegion\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DFT_Fact_Sales3"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{E2813A17-00BF-4921-85C0-1F084A9631A0}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT_Fact_Sales3"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT_Fact_Sales3\Merge Join"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DFT_Fact_Sales3\Merge Join.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Fact_Sales3\Merge Join.Inputs[Merge Join Left Input].Columns[OrderDate]"
+                      cachedDataType="dbDate"
+                      cachedName="OrderDate"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\DFT_Fact_Sales3\Sort.Outputs[Sort Output].Columns[OrderDate]" />
+                    <inputColumn
+                      refId="Package\DFT_Fact_Sales3\Merge Join.Inputs[Merge Join Left Input].Columns[OrderQty]"
+                      cachedDataType="i2"
+                      cachedName="OrderQty"
+                      lineageId="Package\DFT_Fact_Sales3\Sort.Outputs[Sort Output].Columns[OrderQty]" />
+                    <inputColumn
+                      refId="Package\DFT_Fact_Sales3\Merge Join.Inputs[Merge Join Left Input].Columns[CustomerID]"
+                      cachedDataType="i4"
+                      cachedName="CustomerID"
+                      lineageId="Package\DFT_Fact_Sales3\Sort.Outputs[Sort Output].Columns[CustomerID]" />
+                    <inputColumn
+                      refId="Package\DFT_Fact_Sales3\Merge Join.Inputs[Merge Join Left Input].Columns[SalesYTD]"
+                      cachedDataType="cy"
+                      cachedName="SalesYTD"
+                      lineageId="Package\DFT_Fact_Sales3\Sort.Outputs[Sort Output].Columns[SalesYTD]" />
+                    <inputColumn
+                      refId="Package\DFT_Fact_Sales3\Merge Join.Inputs[Merge Join Left Input].Columns[CountryRegionCode]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="CountryRegionCode"
+                      lineageId="Package\DFT_Fact_Sales3\Sort.Outputs[Sort Output].Columns[CountryRegionCode]" />
+                    <inputColumn
+                      refId="Package\DFT_Fact_Sales3\Merge Join.Inputs[Merge Join Left Input].Columns[Name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Name"
+                      lineageId="Package\DFT_Fact_Sales3\Sort.Outputs[Sort Output].Columns[Name]" />
+                    <inputColumn
+                      refId="Package\DFT_Fact_Sales3\Merge Join.Inputs[Merge Join Left Input].Columns[FirstName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="FirstName"
+                      lineageId="Package\DFT_Fact_Sales3\Sort.Outputs[Sort Output].Columns[FirstName]" />
+                    <inputColumn
+                      refId="Package\DFT_Fact_Sales3\Merge Join.Inputs[Merge Join Left Input].Columns[LastName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="LastName"
+                      lineageId="Package\DFT_Fact_Sales3\Sort.Outputs[Sort Output].Columns[LastName]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\DFT_Fact_Sales3\Merge Join.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Fact_Sales3\Merge Join.Inputs[Merge Join Right Input].Columns[Date]"
+                      cachedDataType="dbDate"
+                      cachedName="Date"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\DFT_Fact_Sales3\Sort 1.Outputs[Sort Output].Columns[Date]" />
+                    <inputColumn
+                      refId="Package\DFT_Fact_Sales3\Merge Join.Inputs[Merge Join Right Input].Columns[Dateid]"
+                      cachedDataType="i4"
+                      cachedName="Dateid"
+                      lineageId="Package\DFT_Fact_Sales3\Sort 1.Outputs[Sort Output].Columns[Dateid]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Fact_Sales3\Merge Join.Outputs[Merge Join Output]"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\Merge Join.Outputs[Merge Join Output].Columns[OrderQty]"
+                      dataType="i2"
+                      lineageId="Package\DFT_Fact_Sales3\Merge Join.Outputs[Merge Join Output].Columns[OrderQty]"
+                      name="OrderQty">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DFT_Fact_Sales3\Merge Join.Inputs[Merge Join Left Input].Columns[OrderQty]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\Merge Join.Outputs[Merge Join Output].Columns[CustomerID]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Fact_Sales3\Merge Join.Outputs[Merge Join Output].Columns[CustomerID]"
+                      name="CustomerID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DFT_Fact_Sales3\Merge Join.Inputs[Merge Join Left Input].Columns[CustomerID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\Merge Join.Outputs[Merge Join Output].Columns[SalesYTD]"
+                      dataType="cy"
+                      lineageId="Package\DFT_Fact_Sales3\Merge Join.Outputs[Merge Join Output].Columns[SalesYTD]"
+                      name="SalesYTD">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DFT_Fact_Sales3\Merge Join.Inputs[Merge Join Left Input].Columns[SalesYTD]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\Merge Join.Outputs[Merge Join Output].Columns[Dateid]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Fact_Sales3\Merge Join.Outputs[Merge Join Output].Columns[Dateid]"
+                      name="Dateid">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DFT_Fact_Sales3\Merge Join.Inputs[Merge Join Right Input].Columns[Dateid]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\Merge Join.Outputs[Merge Join Output].Columns[CountryRegionCode]"
+                      dataType="wstr"
+                      length="3"
+                      lineageId="Package\DFT_Fact_Sales3\Merge Join.Outputs[Merge Join Output].Columns[CountryRegionCode]"
+                      name="CountryRegionCode">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DFT_Fact_Sales3\Merge Join.Inputs[Merge Join Left Input].Columns[CountryRegionCode]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\Merge Join.Outputs[Merge Join Output].Columns[Name]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DFT_Fact_Sales3\Merge Join.Outputs[Merge Join Output].Columns[Name]"
+                      name="Name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DFT_Fact_Sales3\Merge Join.Inputs[Merge Join Left Input].Columns[Name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\Merge Join.Outputs[Merge Join Output].Columns[FirstName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DFT_Fact_Sales3\Merge Join.Outputs[Merge Join Output].Columns[FirstName]"
+                      name="FirstName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DFT_Fact_Sales3\Merge Join.Inputs[Merge Join Left Input].Columns[FirstName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\Merge Join.Outputs[Merge Join Output].Columns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DFT_Fact_Sales3\Merge Join.Outputs[Merge Join Output].Columns[LastName]"
+                      name="LastName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DFT_Fact_Sales3\Merge Join.Inputs[Merge Join Left Input].Columns[LastName]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Fact_Sales3\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Fact_Sales_DM3]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Fact_Sales3\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[(LocalDb)\MSSQLLocalDb.DB_DataMartIani]"
+                  connectionManagerRefId="Package.ConnectionManagers[(LocalDb)\MSSQLLocalDb.DB_DataMartIani]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_Fact_Sales3\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[OrderQty]"
+                      cachedDataType="i2"
+                      cachedName="OrderQty"
+                      externalMetadataColumnId="Package\DFT_Fact_Sales3\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
+                      lineageId="Package\DFT_Fact_Sales3\Merge Join.Outputs[Merge Join Output].Columns[OrderQty]" />
+                    <inputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CustomerID]"
+                      cachedDataType="i4"
+                      cachedName="CustomerID"
+                      externalMetadataColumnId="Package\DFT_Fact_Sales3\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Id_Customer]"
+                      lineageId="Package\DFT_Fact_Sales3\Merge Join.Outputs[Merge Join Output].Columns[CustomerID]" />
+                    <inputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Dateid]"
+                      cachedDataType="i4"
+                      cachedName="Dateid"
+                      externalMetadataColumnId="Package\DFT_Fact_Sales3\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Id_Time]"
+                      lineageId="Package\DFT_Fact_Sales3\Merge Join.Outputs[Merge Join Output].Columns[Dateid]" />
+                    <inputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CountryRegionCode]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="CountryRegionCode"
+                      externalMetadataColumnId="Package\DFT_Fact_Sales3\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Id_Region]"
+                      lineageId="Package\DFT_Fact_Sales3\Merge Join.Outputs[Merge Join Output].Columns[CountryRegionCode]" />
+                    <inputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SalesYTD]"
+                      cachedDataType="cy"
+                      cachedName="SalesYTD"
+                      externalMetadataColumnId="Package\DFT_Fact_Sales3\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Sales YTD]"
+                      lineageId="Package\DFT_Fact_Sales3\Merge Join.Outputs[Merge Join Output].Columns[SalesYTD]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Id_Time]"
+                      dataType="i4"
+                      name="Id_Time" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Id_Region]"
+                      dataType="wstr"
+                      length="3"
+                      name="Id_Region" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Id_Customer]"
+                      dataType="i4"
+                      name="Id_Customer" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
+                      dataType="i4"
+                      name="Quantity" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Sales YTD]"
+                      dataType="cy"
+                      name="Sales YTD" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Fact_Sales3\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT_Fact_Sales3\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Fact_Sales3\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT        Sales.SalesOrderDetail.OrderQty, CAST(Sales.SalesOrderHeader.OrderDate AS date) AS OrderDate, Sales.Customer.CustomerID, Sales.SalesTerritory.SalesYTD, Person.CountryRegion.CountryRegionCode, 
+                         Person.CountryRegion.Name, Person.Person.FirstName, Person.Person.LastName
+FROM            Person.Person INNER JOIN
+                         Sales.Customer ON Person.Person.BusinessEntityID = Sales.Customer.PersonID INNER JOIN
+                         Sales.SalesTerritory ON Sales.Customer.TerritoryID = Sales.SalesTerritory.TerritoryID INNER JOIN
+                         Person.CountryRegion ON Sales.SalesTerritory.CountryRegionCode = Person.CountryRegion.CountryRegionCode INNER JOIN
+                         Sales.SalesOrderHeader ON Sales.Customer.CustomerID = Sales.SalesOrderHeader.CustomerID AND Sales.SalesTerritory.TerritoryID = Sales.SalesOrderHeader.TerritoryID INNER JOIN
+                         Sales.SalesOrderDetail ON Sales.SalesOrderHeader.SalesOrderID = Sales.SalesOrderDetail.SalesOrderID AND Sales.SalesOrderHeader.SalesOrderID = Sales.SalesOrderDetail.SalesOrderID</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Fact_Sales3\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[(LocalDb)\MSSQLLocalDb.AdventureWorks2008R2]"
+                  connectionManagerRefId="Package.ConnectionManagers[(LocalDb)\MSSQLLocalDb.AdventureWorks2008R2]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output].Columns[OrderQty]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[OrderQty]"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output].Columns[OrderQty]"
+                      name="OrderQty"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output].Columns[OrderDate]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[OrderDate]"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output].Columns[OrderDate]"
+                      name="OrderDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CustomerID]"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerID]"
+                      name="CustomerID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output].Columns[SalesYTD]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SalesYTD]"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output].Columns[SalesYTD]"
+                      name="SalesYTD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output].Columns[CountryRegionCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CountryRegionCode]"
+                      length="3"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output].Columns[CountryRegionCode]"
+                      name="CountryRegionCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output].Columns[Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Name]"
+                      length="50"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output].Columns[Name]"
+                      name="Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output].Columns[FirstName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
+                      length="50"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output].Columns[FirstName]"
+                      name="FirstName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output].Columns[LastName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
+                      length="50"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output].Columns[LastName]"
+                      name="LastName"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[OrderQty]"
+                      dataType="i2"
+                      name="OrderQty" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[OrderDate]"
+                      dataType="dbDate"
+                      name="OrderDate" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CustomerID]"
+                      dataType="i4"
+                      name="CustomerID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SalesYTD]"
+                      dataType="cy"
+                      name="SalesYTD" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CountryRegionCode]"
+                      dataType="wstr"
+                      length="3"
+                      name="CountryRegionCode" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Name]"
+                      dataType="wstr"
+                      length="50"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
+                      dataType="wstr"
+                      length="50"
+                      name="FirstName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      name="LastName" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[OrderQty]"
+                      dataType="i2"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[OrderQty]"
+                      name="OrderQty" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[OrderDate]"
+                      dataType="dbDate"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[OrderDate]"
+                      name="OrderDate" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CustomerID]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CustomerID]"
+                      name="CustomerID" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SalesYTD]"
+                      dataType="cy"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SalesYTD]"
+                      name="SalesYTD" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CountryRegionCode]"
+                      dataType="wstr"
+                      length="3"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CountryRegionCode]"
+                      name="CountryRegionCode" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Name]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Name]"
+                      name="Name" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FirstName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FirstName]"
+                      name="FirstName" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LastName]"
+                      name="LastName" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Fact_Sales3\OLE DB Source 1"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source 1"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Dim_Time_one]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Fact_Sales3\OLE DB Source 1.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[(LocalDb)\MSSQLLocalDb.DB_DataMartIani]"
+                  connectionManagerRefId="Package.ConnectionManagers[(LocalDb)\MSSQLLocalDb.DB_DataMartIani]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Dateid]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[Dateid]"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Dateid]"
+                      name="Dateid"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Date]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[Date]"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Date]"
+                      name="Date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[DateString]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[DateString]"
+                      length="10"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[DateString]"
+                      name="DateString"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Day]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[Day]"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Day]"
+                      name="Day"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[DayofYear]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[DayofYear]"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[DayofYear]"
+                      name="DayofYear"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[DayofWeek]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[DayofWeek]"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[DayofWeek]"
+                      name="DayofWeek"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[DayofWeekName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[DayofWeekName]"
+                      length="10"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[DayofWeekName]"
+                      name="DayofWeekName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Week]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[Week]"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Week]"
+                      name="Week"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Month]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[Month]"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Month]"
+                      name="Month"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[MonthName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[MonthName]"
+                      length="10"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[MonthName]"
+                      name="MonthName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Quarter]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[Quarter]"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Quarter]"
+                      name="Quarter"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Year]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[Year]"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Year]"
+                      name="Year"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[IsWeekend]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[IsWeekend]"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[IsWeekend]"
+                      name="IsWeekend"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[IsLeapYear]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[IsLeapYear]"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[IsLeapYear]"
+                      name="IsLeapYear"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[Dateid]"
+                      dataType="i4"
+                      name="Dateid" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[Date]"
+                      dataType="dbDate"
+                      name="Date" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[DateString]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="DateString" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[Day]"
+                      dataType="i4"
+                      name="Day" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[DayofYear]"
+                      dataType="i4"
+                      name="DayofYear" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[DayofWeek]"
+                      dataType="i4"
+                      name="DayofWeek" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[DayofWeekName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="DayofWeekName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[Week]"
+                      dataType="i4"
+                      name="Week" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[Month]"
+                      dataType="i4"
+                      name="Month" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[MonthName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="MonthName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[Quarter]"
+                      dataType="i4"
+                      name="Quarter" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[Year]"
+                      dataType="i4"
+                      name="Year" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[IsWeekend]"
+                      dataType="bool"
+                      name="IsWeekend" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].ExternalColumns[IsLeapYear]"
+                      dataType="bool"
+                      name="IsLeapYear" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[Dateid]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[Dateid]"
+                      name="Dateid" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[Date]"
+                      dataType="dbDate"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[Date]"
+                      name="Date" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[DateString]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[DateString]"
+                      name="DateString" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[Day]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[Day]"
+                      name="Day" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[DayofYear]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[DayofYear]"
+                      name="DayofYear" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[DayofWeek]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[DayofWeek]"
+                      name="DayofWeek" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[DayofWeekName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[DayofWeekName]"
+                      name="DayofWeekName" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[Week]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[Week]"
+                      name="Week" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[Month]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[Month]"
+                      name="Month" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[MonthName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[MonthName]"
+                      name="MonthName" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[Quarter]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[Quarter]"
+                      name="Quarter" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[Year]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[Year]"
+                      name="Year" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[IsWeekend]"
+                      dataType="bool"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[IsWeekend]"
+                      name="IsWeekend" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[IsLeapYear]"
+                      dataType="bool"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[IsLeapYear]"
+                      name="IsLeapYear" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Fact_Sales3\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DFT_Fact_Sales3\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Fact_Sales3\Sort.Inputs[Sort Input].Columns[OrderQty]"
+                      cachedDataType="i2"
+                      cachedName="OrderQty"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output].Columns[OrderQty]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Fact_Sales3\Sort.Inputs[Sort Input].Columns[OrderDate]"
+                      cachedDataType="dbDate"
+                      cachedName="OrderDate"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output].Columns[OrderDate]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Fact_Sales3\Sort.Inputs[Sort Input].Columns[CustomerID]"
+                      cachedDataType="i4"
+                      cachedName="CustomerID"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Fact_Sales3\Sort.Inputs[Sort Input].Columns[SalesYTD]"
+                      cachedDataType="cy"
+                      cachedName="SalesYTD"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output].Columns[SalesYTD]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Fact_Sales3\Sort.Inputs[Sort Input].Columns[CountryRegionCode]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="CountryRegionCode"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output].Columns[CountryRegionCode]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Fact_Sales3\Sort.Inputs[Sort Input].Columns[Name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Name"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output].Columns[Name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Fact_Sales3\Sort.Inputs[Sort Input].Columns[FirstName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="FirstName"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output].Columns[FirstName]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Fact_Sales3\Sort.Inputs[Sort Input].Columns[LastName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="LastName"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output].Columns[LastName]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Fact_Sales3\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\Sort.Outputs[Sort Output].Columns[OrderQty]"
+                      dataType="i2"
+                      lineageId="Package\DFT_Fact_Sales3\Sort.Outputs[Sort Output].Columns[OrderQty]"
+                      name="OrderQty">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output].Columns[OrderQty]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\Sort.Outputs[Sort Output].Columns[OrderDate]"
+                      dataType="dbDate"
+                      lineageId="Package\DFT_Fact_Sales3\Sort.Outputs[Sort Output].Columns[OrderDate]"
+                      name="OrderDate"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output].Columns[OrderDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\Sort.Outputs[Sort Output].Columns[CustomerID]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Fact_Sales3\Sort.Outputs[Sort Output].Columns[CustomerID]"
+                      name="CustomerID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\Sort.Outputs[Sort Output].Columns[SalesYTD]"
+                      dataType="cy"
+                      lineageId="Package\DFT_Fact_Sales3\Sort.Outputs[Sort Output].Columns[SalesYTD]"
+                      name="SalesYTD">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output].Columns[SalesYTD]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\Sort.Outputs[Sort Output].Columns[CountryRegionCode]"
+                      dataType="wstr"
+                      length="3"
+                      lineageId="Package\DFT_Fact_Sales3\Sort.Outputs[Sort Output].Columns[CountryRegionCode]"
+                      name="CountryRegionCode">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output].Columns[CountryRegionCode]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\Sort.Outputs[Sort Output].Columns[Name]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DFT_Fact_Sales3\Sort.Outputs[Sort Output].Columns[Name]"
+                      name="Name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output].Columns[Name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\Sort.Outputs[Sort Output].Columns[FirstName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DFT_Fact_Sales3\Sort.Outputs[Sort Output].Columns[FirstName]"
+                      name="FirstName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output].Columns[FirstName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\Sort.Outputs[Sort Output].Columns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DFT_Fact_Sales3\Sort.Outputs[Sort Output].Columns[LastName]"
+                      name="LastName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output].Columns[LastName]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Fact_Sales3\Sort 1"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort 1"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DFT_Fact_Sales3\Sort 1.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Fact_Sales3\Sort 1.Inputs[Sort Input].Columns[Dateid]"
+                      cachedDataType="i4"
+                      cachedName="Dateid"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Dateid]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Fact_Sales3\Sort 1.Inputs[Sort Input].Columns[Date]"
+                      cachedDataType="dbDate"
+                      cachedName="Date"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Date]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Fact_Sales3\Sort 1.Inputs[Sort Input].Columns[DateString]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="DateString"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[DateString]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Fact_Sales3\Sort 1.Inputs[Sort Input].Columns[Day]"
+                      cachedDataType="i4"
+                      cachedName="Day"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Day]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Fact_Sales3\Sort 1.Inputs[Sort Input].Columns[DayofYear]"
+                      cachedDataType="i4"
+                      cachedName="DayofYear"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[DayofYear]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Fact_Sales3\Sort 1.Inputs[Sort Input].Columns[DayofWeek]"
+                      cachedDataType="i4"
+                      cachedName="DayofWeek"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[DayofWeek]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Fact_Sales3\Sort 1.Inputs[Sort Input].Columns[DayofWeekName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="DayofWeekName"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[DayofWeekName]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Fact_Sales3\Sort 1.Inputs[Sort Input].Columns[Week]"
+                      cachedDataType="i4"
+                      cachedName="Week"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Week]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Fact_Sales3\Sort 1.Inputs[Sort Input].Columns[Month]"
+                      cachedDataType="i4"
+                      cachedName="Month"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Month]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Fact_Sales3\Sort 1.Inputs[Sort Input].Columns[MonthName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="MonthName"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[MonthName]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Fact_Sales3\Sort 1.Inputs[Sort Input].Columns[Quarter]"
+                      cachedDataType="i4"
+                      cachedName="Quarter"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Quarter]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Fact_Sales3\Sort 1.Inputs[Sort Input].Columns[Year]"
+                      cachedDataType="i4"
+                      cachedName="Year"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Year]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Fact_Sales3\Sort 1.Inputs[Sort Input].Columns[IsWeekend]"
+                      cachedDataType="bool"
+                      cachedName="IsWeekend"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[IsWeekend]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT_Fact_Sales3\Sort 1.Inputs[Sort Input].Columns[IsLeapYear]"
+                      cachedDataType="bool"
+                      cachedName="IsLeapYear"
+                      lineageId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[IsLeapYear]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Fact_Sales3\Sort 1.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\Sort 1.Outputs[Sort Output].Columns[Dateid]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Fact_Sales3\Sort 1.Outputs[Sort Output].Columns[Dateid]"
+                      name="Dateid">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Dateid]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\Sort 1.Outputs[Sort Output].Columns[Date]"
+                      dataType="dbDate"
+                      lineageId="Package\DFT_Fact_Sales3\Sort 1.Outputs[Sort Output].Columns[Date]"
+                      name="Date"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Date]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\Sort 1.Outputs[Sort Output].Columns[DateString]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\DFT_Fact_Sales3\Sort 1.Outputs[Sort Output].Columns[DateString]"
+                      name="DateString">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[DateString]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\Sort 1.Outputs[Sort Output].Columns[Day]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Fact_Sales3\Sort 1.Outputs[Sort Output].Columns[Day]"
+                      name="Day">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Day]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\Sort 1.Outputs[Sort Output].Columns[DayofYear]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Fact_Sales3\Sort 1.Outputs[Sort Output].Columns[DayofYear]"
+                      name="DayofYear">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[DayofYear]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\Sort 1.Outputs[Sort Output].Columns[DayofWeek]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Fact_Sales3\Sort 1.Outputs[Sort Output].Columns[DayofWeek]"
+                      name="DayofWeek">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[DayofWeek]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\Sort 1.Outputs[Sort Output].Columns[DayofWeekName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\DFT_Fact_Sales3\Sort 1.Outputs[Sort Output].Columns[DayofWeekName]"
+                      name="DayofWeekName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[DayofWeekName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\Sort 1.Outputs[Sort Output].Columns[Week]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Fact_Sales3\Sort 1.Outputs[Sort Output].Columns[Week]"
+                      name="Week">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Week]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\Sort 1.Outputs[Sort Output].Columns[Month]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Fact_Sales3\Sort 1.Outputs[Sort Output].Columns[Month]"
+                      name="Month">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Month]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\Sort 1.Outputs[Sort Output].Columns[MonthName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\DFT_Fact_Sales3\Sort 1.Outputs[Sort Output].Columns[MonthName]"
+                      name="MonthName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[MonthName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\Sort 1.Outputs[Sort Output].Columns[Quarter]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Fact_Sales3\Sort 1.Outputs[Sort Output].Columns[Quarter]"
+                      name="Quarter">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Quarter]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\Sort 1.Outputs[Sort Output].Columns[Year]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Fact_Sales3\Sort 1.Outputs[Sort Output].Columns[Year]"
+                      name="Year">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[Year]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\Sort 1.Outputs[Sort Output].Columns[IsWeekend]"
+                      dataType="bool"
+                      lineageId="Package\DFT_Fact_Sales3\Sort 1.Outputs[Sort Output].Columns[IsWeekend]"
+                      name="IsWeekend">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[IsWeekend]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT_Fact_Sales3\Sort 1.Outputs[Sort Output].Columns[IsLeapYear]"
+                      dataType="bool"
+                      lineageId="Package\DFT_Fact_Sales3\Sort 1.Outputs[Sort Output].Columns[IsLeapYear]"
+                      name="IsLeapYear">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[IsLeapYear]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT_Fact_Sales3.Paths[Merge Join Output]"
+              endId="Package\DFT_Fact_Sales3\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Merge Join Output"
+              startId="Package\DFT_Fact_Sales3\Merge Join.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\DFT_Fact_Sales3.Paths[OLE DB Source Output]"
+              endId="Package\DFT_Fact_Sales3\Sort.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\DFT_Fact_Sales3\OLE DB Source.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DFT_Fact_Sales3.Paths[OLE DB Source Output1]"
+              endId="Package\DFT_Fact_Sales3\Sort 1.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\DFT_Fact_Sales3\OLE DB Source 1.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DFT_Fact_Sales3.Paths[Sort Output]"
+              endId="Package\DFT_Fact_Sales3\Merge Join.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\DFT_Fact_Sales3\Sort.Outputs[Sort Output]" />
+            <path
+              refId="Package\DFT_Fact_Sales3.Paths[Sort Output1]"
+              endId="Package\DFT_Fact_Sales3\Merge Join.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\DFT_Fact_Sales3\Sort 1.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{4F1981F2-B1F7-43A8-8300-03D4DD49EAF3}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A9378E5D-EE70-4EF0-A16C-355BA60AF606}"
+          SQLTask:SqlStatementSource="Delete from Fact_Sales_DM3;&#xA;Delete from Dim_Customer;&#xA;Delete from Dim_CountryRegion;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{2FAA3C95-86E7-4E7D-B0B4-493D396E6543}"
+      DTS:From="Package\Execute SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DFT_Dim_CountryRegion" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{8046A463-C284-4C92-B91D-DEC59C42BB89}"
+      DTS:From="Package\Execute SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\DFT_Customers" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{3D5027A8-5674-46F1-9776-0D0246B98EFD}"
+      DTS:From="Package\DFT_Dim_CountryRegion"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\DFT_Fact_Sales3" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{362CEE52-7206-40D2-AED6-37E5DDB74A28}"
+      DTS:From="Package\DFT_Customers"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\DFT_Fact_Sales3" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql12">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="160,42"
+          Id="Package\DFT_Customers"
+          TopLeft="486,144" />
+        <NodeLayout
+          Size="197,42"
+          Id="Package\DFT_Dim_CountryRegion"
+          TopLeft="204,151" />
+        <NodeLayout
+          Size="160,42"
+          Id="Package\DFT_Fact_Sales3"
+          TopLeft="344,238" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="328,70" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="383.666666666667,112">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-81.1666666666667,39"
+              Start="0,0"
+              End="-81.1666666666667,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.8274605103281" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.8274605103281"
+                    Point2="0,15.8274605103281"
+                    Point3="-4,15.8274605103281" />
+                  <mssgle:LineSegment
+                    End="-77.1666666666667,15.8274605103281" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-77.1666666666667,15.8274605103281"
+                    Point2="-81.1666666666667,15.8274605103281"
+                    Point3="-81.1666666666667,19.8274605103281" />
+                  <mssgle:LineSegment
+                    End="-81.1666666666667,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="435.333333333333,112">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="130.666666666667,32"
+              Start="0,0"
+              End="130.666666666667,24.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.98663426488457" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.98663426488457"
+                    Point2="0,12.9866342648846"
+                    Point3="4,12.9866342648846" />
+                  <mssgle:LineSegment
+                    End="126.666666666667,12.9866342648846" />
+                  <mssgle:CubicBezierSegment
+                    Point1="126.666666666667,12.9866342648846"
+                    Point2="130.666666666667,12.9866342648846"
+                    Point3="130.666666666667,16.9866342648846" />
+                  <mssgle:LineSegment
+                    End="130.666666666667,24.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="302.5,193">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="96.1666666666667,45"
+              Start="0,0"
+              End="96.1666666666667,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.7326732673267" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.7326732673267"
+                    Point2="0,26.7326732673267"
+                    Point3="4,26.7326732673267" />
+                  <mssgle:LineSegment
+                    End="92.1666666666667,26.7326732673267" />
+                  <mssgle:CubicBezierSegment
+                    Point1="92.1666666666667,26.7326732673267"
+                    Point2="96.1666666666667,26.7326732673267"
+                    Point3="96.1666666666667,30.7326732673267" />
+                  <mssgle:LineSegment
+                    End="96.1666666666667,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="566,186">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-116.666666666667,52"
+              Start="0,0"
+              End="-116.666666666667,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.8910891089109" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.8910891089109"
+                    Point2="0,30.8910891089109"
+                    Point3="-4,30.8910891089109" />
+                  <mssgle:LineSegment
+                    End="-112.666666666667,30.8910891089109" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-112.666666666667,30.8910891089109"
+                    Point2="-116.666666666667,30.8910891089109"
+                    Point3="-116.666666666667,34.8910891089109" />
+                  <mssgle:LineSegment
+                    End="-116.666666666667,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFT_Customers">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\DFT_Customers\OLE DB Source"
+          TopLeft="311,151" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\DFT_Customers\OLE DB Destination"
+          TopLeft="273,274" />
+        <EdgeLayout
+          Id="Package\DFT_Customers.Paths[OLE DB Source Output]"
+          TopLeft="386,193">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-27.5,81"
+              Start="0,0"
+              End="-27.5,73.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,36.5"
+                    Point2="0,40.5"
+                    Point3="-4,40.5" />
+                  <mssgle:LineSegment
+                    End="-23.5,40.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-23.5,40.5"
+                    Point2="-27.5,40.5"
+                    Point3="-27.5,44.5" />
+                  <mssgle:LineSegment
+                    End="-27.5,73.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_Customers\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_Customers\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DFT_Dim_CountryRegion">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\DFT_Dim_CountryRegion\OLE DB Source"
+          TopLeft="214,77" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\DFT_Dim_CountryRegion\OLE DB Destination"
+          TopLeft="281,222" />
+        <EdgeLayout
+          Id="Package\DFT_Dim_CountryRegion.Paths[OLE DB Source Output]"
+          TopLeft="289,119">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="77.5,103"
+              Start="0,0"
+              End="77.5,95.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,47.5"
+                    Point2="0,51.5"
+                    Point3="4,51.5" />
+                  <mssgle:LineSegment
+                    End="73.5,51.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="73.5,51.5"
+                    Point2="77.5,51.5"
+                    Point3="77.5,55.5" />
+                  <mssgle:LineSegment
+                    End="77.5,95.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_Dim_CountryRegion\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_Dim_CountryRegion\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DFT_Fact_Sales3">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="130,42"
+          Id="Package\DFT_Fact_Sales3\Merge Join"
+          TopLeft="372,243" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\DFT_Fact_Sales3\OLE DB Source"
+          TopLeft="204,67" />
+        <NodeLayout
+          Size="107,42"
+          Id="Package\DFT_Fact_Sales3\Sort 1"
+          TopLeft="561,181" />
+        <NodeLayout
+          Size="98,42"
+          Id="Package\DFT_Fact_Sales3\Sort"
+          TopLeft="268,175" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\DFT_Fact_Sales3\OLE DB Destination"
+          TopLeft="363,330" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\DFT_Fact_Sales3\OLE DB Source 1"
+          TopLeft="539,81" />
+        <EdgeLayout
+          Id="Package\DFT_Fact_Sales3.Paths[Sort Output1]"
+          TopLeft="561,202">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-59,62"
+              Start="0,0"
+              End="-51.5,62">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-25.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-25.5,0"
+                    Point2="-29.5,0"
+                    Point3="-29.5,4" />
+                  <mssgle:LineSegment
+                    End="-29.5,58" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-29.5,58"
+                    Point2="-29.5,62"
+                    Point3="-33.5,62" />
+                  <mssgle:LineSegment
+                    End="-51.5,62" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Fact_Sales3.Paths[Sort Output]"
+          TopLeft="317,217">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="120,26"
+              Start="0,0"
+              End="120,18.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9"
+                    Point2="0,13"
+                    Point3="4,13" />
+                  <mssgle:LineSegment
+                    End="116,13" />
+                  <mssgle:CubicBezierSegment
+                    Point1="116,13"
+                    Point2="120,13"
+                    Point3="120,17" />
+                  <mssgle:LineSegment
+                    End="120,18.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Fact_Sales3.Paths[OLE DB Source Output1]"
+          TopLeft="616.5,123">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58"
+              Start="0,0"
+              End="0,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Fact_Sales3.Paths[OLE DB Source Output]"
+          TopLeft="279,109">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="38,66"
+              Start="0,0"
+              End="38,58.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29"
+                    Point2="0,33"
+                    Point3="4,33" />
+                  <mssgle:LineSegment
+                    End="34,33" />
+                  <mssgle:CubicBezierSegment
+                    Point1="34,33"
+                    Point2="38,33"
+                    Point3="38,37" />
+                  <mssgle:LineSegment
+                    End="38,58.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Fact_Sales3.Paths[Merge Join Output]"
+          TopLeft="437,285">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="11.5,45"
+              Start="0,0"
+              End="11.5,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.5"
+                    Point2="0,22.5"
+                    Point3="4,22.5" />
+                  <mssgle:LineSegment
+                    End="7.5,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="7.5,22.5"
+                    Point2="11.5,22.5"
+                    Point3="11.5,26.5" />
+                  <mssgle:LineSegment
+                    End="11.5,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_Fact_Sales3\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_Fact_Sales3\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_Fact_Sales3\OLE DB Source 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
